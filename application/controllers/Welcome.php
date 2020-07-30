@@ -3,23 +3,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	 function __construct(){
+		parent::__construct();
+		
+		
+		if($this->session->userdata('auth')!=true){
+				redirect('Biblioteca');
+				dic("");
+		};
+	}
+
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('biblioteca/menu');
+		$this->load->view('biblioteca/welcome_message');
+
+		
+	}
+	public function usuario()
+	{
+		$this->load->view('biblioteca/formUsuario');
+		
+	}
+	public function tabusuarios()
+	{ 
+		$this->load->model('model_usuario');
+        $result = $this->model_usuario->consultar();
+        $datos = array('registros'=>$result);
+		$this->load->view('biblioteca/tabusuarios',$datos);
+		
+	}
+	public function ejemplar()
+	{
+		$this->load->view('biblioteca/formEjemplar');
+		
+	}
+	public function tabejemplar()
+	{
+		$this->load->model('model_ejemplar');
+        $result = $this->model_ejemplar->consultar();
+        $datos = array('registros'=>$result);
+		$this->load->view('biblioteca/tabEjemplar',$datos);
+		
+	}
+
+	public function categoria()
+	{
+		$this->load->view('biblioteca/formCategoria1');
+	}
+	public function tabcategoria()
+	{
+		$this->load->model('model_categoria');
+        $result = $this->model_categoria->consultar();
+        $datos = array('registros'=>$result);
+		$this->load->view('biblioteca/tabCategoria',$datos);
+		
 	}
 }
+
