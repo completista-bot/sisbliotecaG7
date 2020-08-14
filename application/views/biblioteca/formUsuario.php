@@ -21,10 +21,6 @@
         <div class="card container "style="width: 700px;height: auto;">
           <div class="card-body">
 
-
-
-
-          
         <form method="post"  action="<?php echo base_url();?>ctrlusuarios/guardar?id=<?php echo $registros->usua_id;?>"  >
                     <div class="form-group">
                         <label for="exampleInputEmail1"><i class="fas fa-id-card-alt"></i>Usuario</label>
