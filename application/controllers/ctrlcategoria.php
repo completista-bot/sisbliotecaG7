@@ -11,7 +11,7 @@ class ctrlcategoria extends CI_Controller {
     
         $datos = array('registros'=>$result);
        
-        $this->load->view('biblioteca/formCategoria',$datos);
+        $this->load->view('biblioteca/formCategoria1',$datos);
         
         
         

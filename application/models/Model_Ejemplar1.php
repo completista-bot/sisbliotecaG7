@@ -4,6 +4,7 @@
         {
             parent::__construct();
         }
+<<<<<<< HEAD
 
         function getCategorias(){
             $rows=$this->db->query("SELECT * FROM  categoria")->result();
@@ -18,4 +19,16 @@
     
     }
 }
+=======
+        
+        function getCategorias(){
+            $rows = $this->db->query("SELECT * FROM categoria")->result();
+            $opciones = array();
+            foreach($rows as $row){
+                $opciones[$row->cate_id] = $row->cate_nombre;
+            }
+            return $opciones;
+        }
+    }
+>>>>>>> 3e605e759a1a97327b10372560effe618a81c52b
 ?>
