@@ -21,16 +21,23 @@
         <br>
         <div class="card container "style="width: 700px;height: auto;">
           <div class="card-body">
-
         <form method="post"  action="<?php echo base_url();?>ctrlcategoria/guardar?cate_id=0"  >
+
+                    <td>
+                    <a href="<?php echo base_url();?>Ejemplar/crear?cate_id=0" class="btn btn-primary"><li class="fa fa-edit"></li>Categorias</a>
+                    </td>
+
+
                     <div class="form-group">
                         <label for="exampleInputEmail1"><i class="fas fa-id-card-alt"></i>Cate_id</label>
-                        <input type="number" class="form-control" name="cate_id" >
+                        <input type="number" class="form-control" name="cate_id " >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"><i class="fas fa-users"></i> Cate_Nombre</label>
                         <input type="text" class="form-control" name="cate_nombre" >
+                    
                     </div>
+                    
                     <button type="submit" class="btn btn-primary" value="save">Registrar</button>
                 </form>
 
