@@ -2,7 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ctrlejemplar extends CI_Controller {
-
+    
+    function _construct(){
+        parent::_construct();
+        
+    }
+    
 	public function index(){
         $id = $this->input->get('ejem_id');
     
@@ -15,6 +20,7 @@ class ctrlejemplar extends CI_Controller {
         
         
     }
+    
 
     public function guardar(){
          $id = $this->input->get('ejem_id');
@@ -55,7 +61,14 @@ class ctrlejemplar extends CI_Controller {
          );
      $this->model_ejemplar->guardar($data,$id);
         redirect();
-      
+        
+    }
+    public function crear(){
+        $this->load->helper('form');
+        $this->load->model('model_ejemplar');
+        $opciones = $this->model_ejemplar->getcategoria();
+        $data['opciones'] = $opciones;
+        $this->load->view("biblioteca/formEjemplar",$data);
     }
 
     public function eliminar(){
@@ -65,6 +78,6 @@ class ctrlejemplar extends CI_Controller {
         $result = $this->model_ejemplar->consultar();
         $datos = array('registros'=>$result);
         $this->load->view('biblioteca/tabEjemplar',$datos);  
-    }
-    
+    }  
 }
+?>

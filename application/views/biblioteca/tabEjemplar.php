@@ -7,6 +7,7 @@
 
  <br>
 
+
 <div class="container">
 <div class="row">
   <div class=" col-sm-8.2 p-3 bg-white " id="div">
@@ -17,7 +18,7 @@
             <table class="table table-bordered table-active">
             <thead class="thead-dark">
 
-
+            
                   <tr>
                      <th>ID</th>
                      <th>TITULO</th>
