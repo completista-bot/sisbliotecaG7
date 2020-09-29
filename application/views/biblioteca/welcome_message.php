@@ -205,12 +205,12 @@
                                 <td>$112,000</td>
                             </tr>
                         </tbody>        
-                       </table>                  
+                       </table>                 
                     </div>
                 </div>
         </div>  
     </div>    
-      
+    
 
         
     <!--Ejemplo tabla con HTML-->  
